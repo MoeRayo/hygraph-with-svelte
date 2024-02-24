@@ -8,14 +8,9 @@
 
 
   onMount(async () => {
-    console.log(import.meta.env.VITE_HYGRAPH_URL)
     const hygraphURL = import.meta.env.VITE_HYGRAPH_URL;
 
-    const client = new GraphQLClient(hygraphURL, {
-      headers: {
-       
-      }
-    });
+    const client = new GraphQLClient(hygraphURL);
 
     const query = gql`
       query products {
@@ -51,7 +46,7 @@
     {/each}
   </div>
 
-   <h1 class="text-3xl font-semibold mb-8">Stores</h1>
+  <h1 class="text-3xl font-semibold mb-8">Stores</h1>
   <table class="min-w-full divide-y divide-gray-200">
     <thead class="bg-gray-50">
       <tr>
